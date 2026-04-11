@@ -1,0 +1,16 @@
+[package]
+name = "niri-gesture-inspector"
+version = "0.1.0"
+edition = "2024"
+description = "Live GTK4 visualizer for niri touchscreen gesture recognizer state"
+
+[dependencies]
+gtk4 = "0.9"
+glib = "0.20"
+async-channel = "2"
+niri-ipc = { path = "../niri/niri-ipc" }
+anyhow = "1"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
