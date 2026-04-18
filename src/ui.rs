@@ -14,9 +14,7 @@
 
 use gtk4::cairo::Context;
 use gtk4::prelude::*;
-use gtk4::{
-    Align, ApplicationWindow, DrawingArea, Frame, Label, Orientation,
-};
+use gtk4::{Align, ApplicationWindow, DrawingArea, Frame, Label, Orientation};
 use std::cell::RefCell;
 use std::f64::consts::PI;
 use std::rc::Rc;
@@ -407,11 +405,7 @@ pub fn build(window: &ApplicationWindow) -> impl Fn(IpcMsg) + use<> {
             IpcMsg::Frame(frame) => {
                 // swipe has no per-frame classifier bool; its "commit"
                 // only happens at end-of-gesture when the race resolves.
-                swipe_bar.update(
-                    frame.swipe_distance,
-                    frame.swipe_trigger_distance,
-                    false,
-                );
+                swipe_bar.update(frame.swipe_distance, frame.swipe_trigger_distance, false);
                 // pinch + rotation are signed — the bidirectional bars
                 // use the sign to show direction (pinch-in/out, ccw/cw).
                 pinch_bar.update(

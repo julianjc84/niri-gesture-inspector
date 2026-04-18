@@ -83,8 +83,8 @@ fn run_loop<F: Fn(IpcMsg)>(send: &F) -> Result<()> {
     // Connect to the well-known niri socket (NIRI_SOCKET env var, or
     // $XDG_RUNTIME_DIR/niri.<wayland-display>.sock as fallback — the
     // niri-ipc crate handles this lookup for us).
-    let mut socket = Socket::connect()
-        .context("failed to connect to niri IPC socket (is niri running?)")?;
+    let mut socket =
+        Socket::connect().context("failed to connect to niri IPC socket (is niri running?)")?;
 
     // Switch the socket into event-stream mode. niri stops reading
     // further Request messages after this and starts pushing Events.
