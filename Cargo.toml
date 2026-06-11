@@ -8,7 +8,7 @@ description = "Live GTK4 visualizer for niri touchscreen gesture recognizer stat
 gtk4 = "0.9"
 glib = "0.20"
 async-channel = "2"
-niri-ipc = { path = "../niri/niri-ipc" }
+niri-ipc = { path = "../niri-B-gesture-ipc-tags/niri-ipc" }
 anyhow = "1"
 
 [profile.release]
